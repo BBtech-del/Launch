@@ -450,55 +450,6 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     font-weight: 700;
   }
 
-  /* Tiers */
-  #tiers .tier-wrapper {
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    padding: 40px 20px;
-    margin: 0 auto 40px;
-    max-width: 1000px;
-  }
-  #tiers h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--electric-red);
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .tier-box {
-    background: var(--black);
-    border: 2px solid var(--electric-red);
-    border-radius: 8px;
-    padding: 30px;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: left;
-  }
-  .tier-box h3 {
-    color: var(--electric-red);
-    font-size: 1.4em;
-    margin-bottom: 10px;
-  }
-  .tier-box .price {
-    color: var(--gold);
-    font-size: 1.3em;
-    font-weight: 700;
-    margin: 15px 0;
-  }
-  .tier-box ul {
-    padding-left: 20px;
-  }
-  .tier-box li {
-    margin-bottom: 8px;
-  }
-  .tier-box li span {
-    display: block;
-    margin-top: 4px;
-    margin-left: 1.2em;
-    font-size: 0.95em;
-    font-weight: 500;
-  }
-
   /* Footer CTA */
   #footer-cta h2 {
     font-size: 2.5em;
@@ -851,92 +802,152 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 <!-- END SECTION: Automated Follow-Up Use Cases -->
 
 
+  
+
+<!-- Start tiers section -->
+<style>
+  /* Tiers Styling */
+  #tiers .tier-wrapper {
+    border: 1px solid #2bb19b;
+    border-radius: 8px;
+    padding: 40px 20px;
+    margin: 0 auto 40px;
+    max-width: 1000px;
+    background: #ffffff;
+  }
+  #tiers h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2bb19b;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .tier-box {
+    background: #ffffff;
+    border: 2px solid #2bb19b;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    color: #000000;
+  }
+  .tier-box h3 {
+    color: #2bb19b;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  .tier-box .price {
+    color: #2bb19b;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+  .tier-box ul {
+    padding-left: 20px;
+  }
+  .tier-box li {
+    margin-bottom: 8px;
+  }
+  .tier-box li span {
+    display: block;
+    margin-top: 4px;
+    margin-left: 1.2em;
+    font-size: 0.95em;
+    font-weight: 500;
+  }
+</style>
+
+<section id="tiers" class="section-white-full">
+  <div class="tier-wrapper">
+    <h2>Choose Your Launch Package</h2>
+
+    <div class="tier-box">
+      <h3>TIER 1: DONE-WITH-YOU</h3>
+      <p>We build your site for you using one of our high-converting templates. You choose the design—we customize the branding, business name, and logo to match your identity. Launch-ready in 72 hours. No revisions. Just results.</p>
+      <div class="price">$249 setup | $99/mo</div>
+      <ul>
+        <li>Conversion-optimized funnel template</li>
+        <li>Fully wired automations (booking, payment, CRM)</li>
+        <li>Calendar + funnel dashboard</li>
+        <li>Self-managed product library (images, pricing, inventory)</li>
+        <li>Stripe or PayPal checkout integration</li>
+        <li>24/7 AI-Powered Sales Assistant
+          <span>• Answers product/service questions instantly—even at 2 AM</span>
+          <span>• Converts browsers into buyers via smart chat logic</span>
+        </li>
+        <li>Auto-Booking Engine (services)
+          <span>• Appointments auto-booked—no manual scheduling</span>
+        </li>
+        <li>10,000 emails/month included</li>
+        <li>Done-for-you cold email chasing sequences</li>
+        <li>Optional 2-way SMS messaging powered by Twilio
+          <span>• Add-on available at Twilio’s standard rates</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tier-box">
+      <h3>TIER 2: DONE-FOR-YOU</h3>
+      <p>Everything from Tier 1, plus full customization, branded AI, and monthly performance tuning.</p>
+      <div class="price">$299 setup | $149/mo</div>
+      <ul>
+        <li>Fully custom funnel design</li>
+        <li>Copywriting & branding optimization</li>
+        <li>Product library setup + image uploads</li>
+        <li>Monthly campaign deployment & performance tuning</li>
+        <li>Auto email sequences that chase and convert leads intelligently</li>
+        <li>Custom Branded AI Agent
+          <span>• Your AI chatbot is customized with your company name</span>
+          <span>• Optional helpdesk/ticketing integration</span>
+        </li>
+        <li>Enhanced Sales Engine
+          <span>• Dynamic upsell logic</span>
+        </li>
+        <li>Auto-Booking + Follow-Up Sequences
+          <span>• Cold leads warmed with emotionally intelligent nurture</span>
+        </li>
+        <li>Integrated Payment Gateway
+          <span>• Subscriptions, trials & one-offs wired</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tier-box">
+      <h3>TIER 3: PERFORMANCE PARTNER</h3>
+      <p>We create an awfully custom website and modify it until you approve. You get full creative control, strategic pivots, and AI-powered growth tools.</p>
+      <div class="price">$4,999 setup | $499/mo</div>
+      <ul>
+        <li>Everything in Done-For-You, plus:</li>
+        <li>Weekly performance audits & A/B tests</li>
+        <li>Custom campaigns from our asset vault</li>
+        <li>Quarterly funnel rebuilds + strategic pivots</li>
+        <li>Enterprise AI Sales System
+          <span>• Bespoke chat—custom logic & multi-channel routing</span>
+          <span>• Fulfillment triggers & support handoffs</span>
+        </li>
+        <li>Full Funnel Optimization Engine
+          <span>• Multi-variant product logic</span>
+          <span>• Inventory syncing & upsell testing</span>
+        </li>
+        <li>Advanced Booking + Follow-Up Logic
+          <span>• Personalized sequences based on behavior & funnel stage</span>
+        </li>
+        <li>Multi-Gateway Payment Logic
+          <span>• Stripe + PayPal + optional add-ons wired for scale</span>
+        </li>
+        <li>AI Creator Suite
+          <span>• Create AI-powered videos</span>
+          <span>• AI manages your campaigns across social media</span>
+        </li>
+        <li><strong style="color:#2bb19b; font-size:1.1em;">Never worry about being overcharged by a marketing agency again.</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End tiers section -->
 
 
-
-  <!-- Tiers -->
-  <section id="tiers" class="section-black-full">
-    <div class="tier-wrapper">
-      <h2>Choose Your Launch Package</h2>
-
-      <div class="tier-box">
-        <h3>TIER 1: DONE-WITH-YOU</h3>
-        <p>Launch-ready funnel in 72 hours. You pick the template. We wire the automations. No revisions. Just results.</p>
-        <div class="price">$249 setup | $99/mo</div>
-        <ul>
-          <li>Conversion-optimized funnel template</li>
-          <li>Fully wired automations (booking, payment, CRM)</li>
-          <li>Calendar + funnel dashboard</li>
-          <li>Self-managed product library (images, pricing, inventory)</li>
-          <li>Stripe or PayPal checkout integration</li>
-          <li>24/7 AI-Powered Sales Assistant
-            <span>• Answers product/service questions instantly—even at 2 AM</span>
-            <span>• Converts browsers into buyers via smart chat logic</span>
-          </li>
-          <li>Automated Sales Engine
-            <span>• Abandoned-cart recovery (SMS + email)</span>
-            <span>• Post-purchase upsells & cross-sells</span>
-            <span>• Loyalty flows & repeat-purchase triggers</span>
-            <span>• Review-request automations</span>
-          </li>
-          <li>Auto-Booking Engine (services)
-            <span>• Appointments auto-booked—no manual scheduling</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="tier-box">
-        <h3>TIER 2: DONE-FOR-YOU</h3>
-        <div class="price">$999 setup | $99/mo</div>
-        <ul>
-          <li>Fully custom funnel design</li>
-          <li>Copywriting & branding optimization</li>
-          <li>Product library setup + image uploads</li>
-          <li>Monthly campaign deployment & performance tuning</li>
-          <li>Advanced AI Sales Assistant
-            <span>• Smart routing to support, fulfillment, or sales</span>
-            <span>• Optional helpdesk/ticketing integration</span>
-          </li>
-          <li>Enhanced Sales Engine
-            <span>• Loyalty triggers & reactivation flows</span>
-            <span>• Dynamic upsell logic</span>
-          </li>
-          <li>Auto-Booking + Follow-Up Sequences
-            <span>• Cold leads warmed with emotionally intelligent nurture</span>
-          </li>
-          <li>Integrated Payment Gateway
-            <span>• Subscriptions, trials & one-offs wired</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="tier-box">
-        <h3>TIER 3: PERFORMANCE PARTNER</h3>
-        <div class="price">$4,999 setup | $199/mo</div>
-        <ul>
-          <li>Everything in Done-For-You, plus:</li>
-          <li>Weekly performance audits & A/B tests</li>
-          <li>Custom campaigns from our asset vault</li>
-          <li>Quarterly funnel rebuilds + strategic pivots</li>
-          <li>Enterprise AI Sales System
-            <span>• Bespoke chat—custom logic & multi-channel routing</span>
-            <span>• Fulfillment triggers & support handoffs</span>
-          </li>
-          <li>Full Funnel Optimization Engine
-            <span>• Multi-variant product logic</span>
-            <span>• Inventory syncing & upsell testing</span>
-          </li>
-          <li>Advanced Booking + Follow-Up Logic
-            <span>• Personalized sequences based on behavior & funnel stage</span>
-          </li>
-          <li>Multi-Gateway Payment Logic
-            <span>• Stripe + PayPal + optional add-ons wired for scale</span>
-          </li>
-        </ul>
-      </div>
-  </section>
-
-</main>
 
 
 
