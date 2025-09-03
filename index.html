@@ -807,13 +807,18 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 <!-- Start tiers section -->
 <style>
   /* Tiers Styling */
+  #tiers {
+    background: #000000;
+    padding: 60px 0;
+  }
   #tiers .tier-wrapper {
-    border: 1px solid #2bb19b;
+    border: 2px solid #2bb19b;
+    box-shadow: 0 0 12px #2bb19b;
     border-radius: 8px;
     padding: 40px 20px;
     margin: 0 auto 40px;
     max-width: 1000px;
-    background: #ffffff;
+    background: #000000;
   }
   #tiers h2 {
     font-size: 2.5em;
@@ -823,18 +828,19 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     margin-bottom: 40px;
   }
   .tier-box {
-    background: #ffffff;
+    background: #000000;
     border: 2px solid #2bb19b;
+    box-shadow: 0 0 10px #2bb19b;
     border-radius: 8px;
     padding: 30px;
     max-width: 600px;
     margin: 30px auto;
     text-align: left;
-    color: #000000;
+    color: #ffffff;
   }
   .tier-box h3 {
-    color: #2bb19b;
-    font-size: 1.4em;
+    color: #ff2a2a;
+    font-size: 1.6em;
     margin-bottom: 10px;
   }
   .tier-box .price {
@@ -855,10 +861,37 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     margin-left: 1.2em;
     font-size: 0.95em;
     font-weight: 500;
+    color: #cccccc;
+  }
+  .highlight-green {
+    color: #2bb19b;
+    font-weight: 600;
+  }
+  .setup-note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #aaaaaa;
+  }
+  .buy-button {
+    display: inline-block;
+    background-color: #ff2a2a;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  .buy-button small {
+    display: block;
+    font-size: 0.85em;
+    font-weight: normal;
+    margin-top: 4px;
   }
 </style>
 
-<section id="tiers" class="section-white-full">
+<section id="tiers">
   <div class="tier-wrapper">
     <h2>Choose Your Launch Package</h2>
 
@@ -880,24 +913,27 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
           <span>• Appointments auto-booked—no manual scheduling</span>
         </li>
         <li>10,000 emails/month included</li>
-        <li>Done-for-you cold email chasing sequences</li>
+        <li>Done-for-you cold email chasing sequences
+          <span>• We chase your leads for 3 days with automated follow-up</span>
+        </li>
         <li>Optional 2-way SMS messaging powered by Twilio
           <span>• Add-on available at Twilio’s standard rates</span>
         </li>
       </ul>
+      <a href="#" class="buy-button">BUY NOW<small>$249 setup + $99 monthly</small></a>
     </div>
 
     <div class="tier-box">
       <h3>TIER 2: DONE-FOR-YOU</h3>
-      <p>Everything from Tier 1, plus full customization, branded AI, and monthly performance tuning.</p>
+      <p>Everything in Tier 1, plus a <span class="highlight-green">Custom Branded AI Bot</span>, monthly performance tuning, and a 14-day automated email sequence that chases your leads for you—customized for high conversion. You don’t lift a finger.</p>
       <div class="price">$299 setup | $149/mo</div>
       <ul>
-        <li>Fully custom funnel design</li>
+        <li>Everything in Tier 1</li>
         <li>Copywriting & branding optimization</li>
         <li>Product library setup + image uploads</li>
         <li>Monthly campaign deployment & performance tuning</li>
         <li>Auto email sequences that chase and convert leads intelligently</li>
-        <li>Custom Branded AI Agent
+        <li><span class="highlight-green">Custom Branded AI Agent</span>
           <span>• Your AI chatbot is customized with your company name</span>
           <span>• Optional helpdesk/ticketing integration</span>
         </li>
@@ -911,6 +947,8 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
           <span>• Subscriptions, trials & one-offs wired</span>
         </li>
       </ul>
+      <div class="setup-note">Setup requires 5 business days.</div>
+      <a href="#" class="buy-button">BUY NOW<small>$299 setup + $149 monthly</small></a>
     </div>
 
     <div class="tier-box">
@@ -940,8 +978,9 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
           <span>• Create AI-powered videos</span>
           <span>• AI manages your campaigns across social media</span>
         </li>
-        <li><strong style="color:#2bb19b; font-size:1.1em;">Never worry about being overcharged by a marketing agency again.</strong></li>
+        <li><strong style="color:#ff2a2a; font-size:1.1em;">Never worry about being overcharged by a marketing agency again.</strong></li>
       </ul>
+      <a href="#" class="buy-button">BUY NOW<small>$4,999 setup + $499 monthly</small></a>
     </div>
   </div>
 </section>
