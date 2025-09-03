@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1089039574891097');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- existing meta, title, CSS links, etc. -->
+</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Not Just Stores — AI Powered Stores That Convert!</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  header {
+    position: relative;
+    padding: 3em 1em 0.5em;
+  }
+
+  .brand {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    background: #ff4444;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5),
+                0 0 4px rgba(255,255,255,0.2);
+  }
+
+  /* removed the white border around the brand-icon */
+
+  .brand-text {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-left: 0.5em;
+  }
+
+  .title-group {
+    display: inline-block;
+    line-height: 1.4em;
+    margin-bottom: 0.2em;
+  }
+
+  .title-group span {
+    display: block;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+  }
+
+  .title-group span:first-child {
+    color: #fff;
+  }
+
+  .title-group span:last-child {
+    color: #ff4444;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    color: #ccc;
+    font-weight: normal;
+    margin-top: 0.8em;
+  }
+
+  @media (max-width: 600px) {
+    .title-group span {
+      font-size: 2em;
+      letter-spacing: 0.5px;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    .arrow-up {
+      font-size: 1.8em;
+    }
+    .access-message {
+      font-size: 1em;
+    }
+    .stat-message {
+      font-size: 0.95em;
+    }
+  }
+
+  main {
+    max-width: 850px;
+    margin: auto;
+    padding: 1em 1em 3em;
+  }
+
+  /* stable electric-frame glow */
+  .electric-frame {
+    position: relative;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 0 auto;
+    background-color: #000;
+    box-shadow: 0 0 12px #00aaff;
+    animation: none;
+    max-width: 800px;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .video-wrapper {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .placeholder-frame {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('https://img.youtube.com/vi/KcRib2gRo2s/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 0 15px #ffeb3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+  }
+
+  .play-button::after {
+    content: '';
+    display: block;
+    width: 0; height: 0;
+    border-left: 25px solid #000;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+
+  #player {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: none;
+    z-index: 0;
+  }
+
+  .click-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 200;
+    cursor: pointer;
+  }
+
+  #popup-form {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    z-index: 300;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+  }
+  #popup-form h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+  #popup-form input {
+    width: 80%; max-width: 300px;
+    padding: 0.8em; margin: 0.4em 0;
+    border: none; border-radius: 4px;
+    background: #222; color: #fff;
+    font-size: 1em;
+  }
+  #popup-form button {
+    padding: 0.8em 1.2em;
+    margin-top: 0.5em;
+    border: none; border-radius: 4px;
+    background: #ff4444;
+    color: #fff;
+    font-weight: 700; cursor: pointer;
+  }
+
+  .sign-up-btn {
+    display: none;
+    position: absolute;
+    bottom: 15%; left: 10%;
+    padding: 0.8em 1.2em;
+    border: none; border-radius: 4px;
+    background: #ff4444;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 0 8px rgba(255,68,68,0.7);
+    cursor: pointer;
+    z-index: 250;
+  }
+
+  .arrow-up {
+    font-size: 2.2em;
+    color: #FFA500;
+    text-shadow: 0 0 6px #ffcc66;
+    letter-spacing: 0.5em;
+    margin: 0.3em 0 0;
+  }
+
+  .access-message {
+    font-size: 1em;  /* smaller */
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Segoe UI Semibold', sans-serif;
+    margin-top: 0.3em;
+  }
+
+  .stat-message {
+    font-size: 1.05em;
+    color: #ccc;
+    margin-top: 1.2em;
+    padding: 0 1em;
+    line-height: 1.5em;
+  }
+
+  footer {
+    font-size: 0.85em;
+    color: #bbb;
+    padding: 2em 1em;
+    border-top: 1px solid #333;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-icon">B</div>
+      <div class="brand-text">BizBuild</div>
+    </div>
+    <div class="title-group">
+      <span>Not Just Stores.</span>
+      <span>AI Powered Stores That Convert!</span>
+    </div>
+    <h2>Strategy → Traffic → Measurable ROI</h2>
+  </header>
+
+
+
+<style>
+  :root {
+    --electric-red: #ff0033;
+    --black: #000;
+    --white: #fff;
+    --gold: #FFD700;
+  }
+  body, main {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    background: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+  }
+  a { text-decoration: none; }
+  .center { text-align: center; }
+  section { padding: 60px 20px; }
+
+  /* White boxed sections */
+  .section-white-box {
+    background: var(--white);
+    color: var(--black);
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    border-radius: 8px;
+    padding: 60px 20px;
+    text-align: left;
+  }
+
+  /* Full-width black sections */
+  .section-black-full {
+    background: var(--black);
+    color: var(--white);
+    margin-bottom: 40px;
+  }
+
+  ul { text-align: left; padding-left: 20px; margin: 20px 0; }
+
+  /* Hero */
+  #hero-video {
+    width: 100%;
+    height: 400px;
+    background: #111;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  #hero-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--black);
+  }
+  .hero-tagline {
+    font-size: 1em;
+    color: var(--electric-red);
+    margin-top: 10px;
+  }
+  .btn-red {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: var(--electric-red);
+    color: var(--white);
+    border-radius: 6px;
+    font-weight: 700;
+  }
+
+  /* Features */
+  #features h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .feature-card {
+    border: 2px solid var(--electric-red);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .feature-card h3 {
+    color: var(--electric-red);
+    margin-bottom: 10px;
+  }
+
+  /* Marketing Engine */
+  #marketing-engine h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--electric-red);
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  /* Smart AI */
+  #ai-overview h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--electric-red);
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .ai-card {
+    border: 2px solid var(--electric-red);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+  }
+  .ai-card h3 {
+    color: var(--electric-red);
+    margin-bottom: 10px;
+  }
+  .ai-card img {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 6px;
+  }
+
+  /* Game Changers */
+  #gamechangers h2 {
+    font-size: 2.5em;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  #gamechangers ul {
+    list-style: none;
+  }
+  #gamechangers li {
+    margin-bottom: 10px;
+  }
+  #gamechangers li::before {
+    content: '✔';
+    color: var(--electric-red);
+    margin-right: 10px;
+    font-weight: 700;
+  }
+
+  /* Never Miss a Sale */
+  #usecases h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--electric-red);
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  #usecases ul {
+    list-style: none;
+  }
+  #usecases li {
+    margin-bottom: 10px;
+  }
+  #usecases li::before {
+    content: '✔';
+    color: var(--electric-red);
+    margin-right: 10px;
+    font-weight: 700;
+  }
+  #usecases-banner {
+    width: 100%;
+    height: 250px;
+    background: #222;
+    border-radius: 8px;
+    margin: 20px auto;
+  }
+
+  /* Why BizBuild */
+  #whyus h2 {
+    font-size: 2.5em;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  #whyus ul {
+    list-style: none;
+  }
+  #whyus li {
+    margin-bottom: 10px;
+  }
+  #whyus li::before {
+    content: '✔';
+    color: var(--electric-red);
+    margin-right: 10px;
+    font-weight: 700;
+  }
+
+  /* Tiers */
+  #tiers .tier-wrapper {
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 40px 20px;
+    margin: 0 auto 40px;
+    max-width: 1000px;
+  }
+  #tiers h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--electric-red);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .tier-box {
+    background: var(--black);
+    border: 2px solid var(--electric-red);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+  }
+  .tier-box h3 {
+    color: var(--electric-red);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  .tier-box .price {
+    color: var(--gold);
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+  .tier-box ul {
+    padding-left: 20px;
+  }
+  .tier-box li {
+    margin-bottom: 8px;
+  }
+  .tier-box li span {
+    display: block;
+    margin-top: 4px;
+    margin-left: 1.2em;
+    font-size: 0.95em;
+    font-weight: 500;
+  }
+
+  /* Footer CTA */
+  #footer-cta h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--electric-red);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<main>
+
+  <!-- Hero -->
+<section id="hero" class="section-white-box center" style="text-align: center;">
+  <div id="hero-video"></div>
+  <h1 id="hero-title" style="text-align: center;">
+    We Build eCommerce Stores That Convert
+  </h1>
+  <div style="margin: 20px 0;">
+    <a
+      href="#tiers"
+      class="btn-red"
+      style="display: inline-block; padding: 15px 30px; background-color: red; color: white; border-radius: 6px; font-weight: bold;"
+    >
+      Launch Now for $99
+    </a>
+  </div>
+  <div class="hero-tagline" style="color: red;">high converting AI powered superstore</div>
+</section>
+
+
+ <!-- Our All-in-One Commerce Suite -->
+  <section id="features" class="section-black-full">
+    <h2>Our All-in-One Commerce Suite</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Conversion-Ready Storefront</h3>
+        <p>Mobile-first designs with upsells, cross-sells and persuasive CTAs baked in.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Self-Managed Catalog</h3>
+        <p>Full control over SKUs, variants and inventory—no bottlenecks.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Automated Sales Engine</h3>
+        <p>Abandoned-cart recovery, post-purchase offers and loyalty triggers on autopilot.</p>
+      </div>
+      <div class="feature-card">
+        <h3>AI-Powered Support</h3>
+        <p>24/7 chat across site, email, SMS and social—with smart routing to your team.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Payment Gateway Setup</h3>
+        <p>Stripe, PayPal and subscription checkout integrated in minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- All-in-One Marketing Engine -->
+  <section id="marketing-engine" class="section-white-box">
+    <h2>All-in-One Marketing Engine</h2>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>Replace All Other Marketing Subscriptions</h3>
+        <p>Unify your CRM, dialer, mass-texting, lead data, automations and VAs under one $99 plan.</p>
+        <img src="https://i.postimg.cc/JzDNcvL1/gemini-2-5-flash-image-preview-nano-banana-let-this-phone-scree.png/300x150" alt="">
+      </div>
+      <div class="ai-card">
+        <h3>Let AI Handle the Grind While You Scale</h3>
+        <p>Our AI voice agent turn browsers into buyers and inquiries into bookings—your 24/7 AI handles the pipeline so you can focus on results.</p>
+        <img src="https://i.postimg.cc/CxHCdDH0/gemini-2-5-flash-image-preview-nano-banana-make-this-have-a-whi.png/300x150" alt="">
+      </div>
+      <div class="ai-card">
+        <h3>Built by Investment Pros</h3>
+        <p>Designed by dealmakers for closers—thousands use this platform daily to outperform competitors.</p>
+        <img src="https://i.postimg.cc/wvvTDKC2/gemini-2-5-flash-image-preview-nano-banana-remove-one-of-the-gi.png/300x150" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart AI for Qualifying, Fulfillment & Upsell -->
+  <section id="ai-overview" class="section-black-full">
+    <h2>Smart AI for Qualifying, Fulfillment & Upsell</h2>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>AI Voice Agents</h3>
+        <p>AI speaks for your brand—handles calls, texts, emails and social DMs.</p>
+        <img src="https://via.placeholder.com/300x150" alt="">
+      </div>
+      <div class="ai-card">
+        <h3>AI Inquiry Qualifying</h3>
+        <p>Bots vet every customer question, guiding them to the right product or service.</p>
+        <img src="https://via.placeholder.com/300x150" alt="">
+      </div>
+      <div class="ai-card">
+        <h3>AI Order Management</h3>
+        <p>Prevent lost orders and double-bookings with automated tracking & alerts.</p>
+        <img src="https://via.placeholder.com/300x150" alt="">
+      </div>
+    </div>
+  </section>
+
+ <!-- Game Changers -->
+<section id="gamechangers" class="section-white-box" style="text-align: center;">
+  <h2>Game Changers for Business Owners</h2>
+  <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+    <li style="margin-bottom: 10px;">Automate 80% of sales tasks—free up your calendar</li>
+    <li style="margin-bottom: 10px;">Scale instantly—no extra headcount needed</li>
+    <li style="margin-bottom: 10px;">Full product & pricing control in one dashboard</li>
+    <li style="margin-bottom: 10px;">24/7 follow-up—never miss a single lead</li>
+    <li style="margin-bottom: 10px;">Swap templates in seconds—pivot on a dime</li>
+    <li style="margin-bottom: 10px;">Data-driven optimizations for max ROI</li>
+  </ul>
+</section>
+
+  <!-- Never Miss a Sale -->
+<section id="usecases" class="section-black-full" style="text-align: center;">
+  <h2>Never Miss a Sale</h2>
+  <div id="usecases-banner" style="height:200px; background:#222; border-radius:8px; margin:0 auto 20px; overflow: hidden;">   <img src="https://i.postimg.cc/QM6Sf5zD/gemini-2-5-flash-image-preview-nano-banana-create-for-me-a-A-st.png" alt="Never Miss a Sale Banner" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"> </div>
+  <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+    <li style="margin-bottom: 10px;">eCommerce: recover abandoned carts via timed SMS & email</li>
+    <li style="margin-bottom: 10px;">Local Services: auto-schedule appointments and send reminders</li>
+    <li style="margin-bottom: 10px;">Memberships: upsell renewals with personalized follow-up flows</li>
+    <li style="margin-bottom: 10px;">Consulting: nurture leads via multi-channel touchpoints</li>
+    <li style="margin-bottom: 10px;">Retail: flash-sale alerts with geo-targeted push messages</li>
+    <li style="margin-bottom: 10px;">Health & Wellness: automate intake forms and booking confirmations</li>
+  </ul>
+</section>
+
+<!-- SECTION: bizbuild-ai-consolidation -->
+<section id="bizbuild-ai-consolidation" style="background-color:#fff; color:#000; padding:60px 40px; font-family:'Segoe UI', sans-serif; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:40px;">
+  
+  <!-- Text Content -->
+  <div style="flex:1; min-width:300px;">
+    <h2 style="font-size:2.4em; margin-bottom:20px;">
+      <span style="color:#000; font-weight:bold;">How Many Monthly Tools, Subscriptions &</span> 
+      <span style="color:#FF0000; font-weight:bold;">Sales Reps Will You Eliminate?</span>
+    </h2>
+    <p style="font-size:1.2em; line-height:1.6em; margin-bottom:30px;">
+      Most investors burn <strong>$300–$800/month</strong> on disconnected platforms, bloated subscriptions, and thousands more on sales reps just to keep it all stitched together. <br><br>
+      <strong>BizBuild replaces the chaos with:</strong>
+    </p>
+    <ul style="list-style-type:disc; padding-left:20px; font-size:1.1em; line-height:1.8em;">
+      <li>📞 AI-powered voice for inbound & outbound calls</li>
+      <li>📲 AI-powered texting + automated SMS follow-ups</li>
+      <li>📧 AI-powered email campaigns + sequences</li>
+      <li>📅 Live lead routing, calendar sync, smart pipelines</li>
+      <li>🔁 Preloaded campaigns & workflows (no stress)</li>
+      <li>🌍 Multilingual AI that speaks 70+ languages</li>
+      <li>📈 Motivated seller leads, list stacking & more</li>
+    </ul>
+  </div>
+
+  <!-- Image Content -->
+  <div style="flex:1; min-width:300px; text-align:center;">
+    <img src="https://i.postimg.cc/SRmv5qrF/gemini-2-5-flash-image-preview-nano-banana-close-up-of-that-pc.png" alt="BizBuild AI Visual" style="max-width:100%; height:auto; border-radius:8px;">
+  </div>
+
+</section>
+<!-- END SECTION: bizbuild-ai-consolidation -->
+
+<!-- SECTION: Automated Follow-Up Use Cases -->
+<section id="automated-follow-up" style="background-color:#fff; color:#000; padding:60px 40px; font-family:'Segoe UI', sans-serif; display:flex; flex-direction:column; gap:60px;">
+
+  <!-- Real Estate / RSVP Businesses -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-size:2.6em; font-weight:900; color:#FF0000; margin-bottom:20px;">🏡 Real Estate Agents, Salons & RSVP-Based Businesses</h2>
+      <p style="font-size:1.2em; line-height:1.6em;">
+        Imagine someone fills out your Booking or Listing form at <strong>11PM</strong>. Our system texts them instantly, sends a curated email with similar properties, and drops a voicemail the next morning. <br><br>
+        You wake up to a booked call. <strong>That’s automated follow-up.</strong>
+      </p>
+    </div>
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="https://i.postimg.cc/fTQ9GK1K/gemini-2-5-flash-image-preview-nano-banana-put-this-on-white-ba-1.png" alt="Real Estate Automation Visual" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+  </div>
+
+  <!-- Salon Owner -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-size:2.6em; font-weight:900; color:#FF0000; margin-bottom:20px;">Coaches, Spas & Booking Based Businesses</h2>
+      <p style="font-size:1.2em; line-height:1.6em;">
+        Someone clicks <strong>‘Book Now’</strong> but doesn’t finish. Our system sends a reminder text, offers a first-time discount, and nudges them to complete the booking. <br><br>
+        You get more appointments <strong>without chasing anyone.</strong>
+      </p>
+    </div>
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="https://i.postimg.cc/FsvYWKJC/gemini-2-5-flash-image-preview-nano-banana-A-Book-Now-button.png" alt="Salon Booking Automation Visual" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+  </div>
+
+  <!-- Ecom Brand -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-size:2.6em; font-weight:900; color:#FF0000; margin-bottom:20px;">🛍️ Ecom Brand</h2>
+      <p style="font-size:1.2em; line-height:1.6em;">
+        Someone adds to cart but doesn’t buy. Our system sends a personalized SMS, drops a discount email, and follows up with urgency. <br><br>
+        You recover abandoned carts <strong>automatically.</strong>
+      </p>
+    </div>
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="https://i.postimg.cc/Qdyx3NH3/gemini-2-5-flash-image-preview-nano-banana-make-the-wait-popup.png" alt="Ecommerce Cart Recovery Visual" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+  </div>
+
+</section>
+<!-- END SECTION: Automated Follow-Up Use Cases -->
+
+
+
+
+
+  <!-- Tiers -->
+  <section id="tiers" class="section-black-full">
+    <div class="tier-wrapper">
+      <h2>Choose Your Launch Package</h2>
+
+      <div class="tier-box">
+        <h3>TIER 1: DONE-WITH-YOU</h3>
+        <p>Launch-ready funnel in 72 hours. You pick the template. We wire the automations. No revisions. Just results.</p>
+        <div class="price">$249 setup | $99/mo</div>
+        <ul>
+          <li>Conversion-optimized funnel template</li>
+          <li>Fully wired automations (booking, payment, CRM)</li>
+          <li>Calendar + funnel dashboard</li>
+          <li>Self-managed product library (images, pricing, inventory)</li>
+          <li>Stripe or PayPal checkout integration</li>
+          <li>24/7 AI-Powered Sales Assistant
+            <span>• Answers product/service questions instantly—even at 2 AM</span>
+            <span>• Converts browsers into buyers via smart chat logic</span>
+          </li>
+          <li>Automated Sales Engine
+            <span>• Abandoned-cart recovery (SMS + email)</span>
+            <span>• Post-purchase upsells & cross-sells</span>
+            <span>• Loyalty flows & repeat-purchase triggers</span>
+            <span>• Review-request automations</span>
+          </li>
+          <li>Auto-Booking Engine (services)
+            <span>• Appointments auto-booked—no manual scheduling</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tier-box">
+        <h3>TIER 2: DONE-FOR-YOU</h3>
+        <div class="price">$999 setup | $99/mo</div>
+        <ul>
+          <li>Fully custom funnel design</li>
+          <li>Copywriting & branding optimization</li>
+          <li>Product library setup + image uploads</li>
+          <li>Monthly campaign deployment & performance tuning</li>
+          <li>Advanced AI Sales Assistant
+            <span>• Smart routing to support, fulfillment, or sales</span>
+            <span>• Optional helpdesk/ticketing integration</span>
+          </li>
+          <li>Enhanced Sales Engine
+            <span>• Loyalty triggers & reactivation flows</span>
+            <span>• Dynamic upsell logic</span>
+          </li>
+          <li>Auto-Booking + Follow-Up Sequences
+            <span>• Cold leads warmed with emotionally intelligent nurture</span>
+          </li>
+          <li>Integrated Payment Gateway
+            <span>• Subscriptions, trials & one-offs wired</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tier-box">
+        <h3>TIER 3: PERFORMANCE PARTNER</h3>
+        <div class="price">$4,999 setup | $199/mo</div>
+        <ul>
+          <li>Everything in Done-For-You, plus:</li>
+          <li>Weekly performance audits & A/B tests</li>
+          <li>Custom campaigns from our asset vault</li>
+          <li>Quarterly funnel rebuilds + strategic pivots</li>
+          <li>Enterprise AI Sales System
+            <span>• Bespoke chat—custom logic & multi-channel routing</span>
+            <span>• Fulfillment triggers & support handoffs</span>
+          </li>
+          <li>Full Funnel Optimization Engine
+            <span>• Multi-variant product logic</span>
+            <span>• Inventory syncing & upsell testing</span>
+          </li>
+          <li>Advanced Booking + Follow-Up Logic
+            <span>• Personalized sequences based on behavior & funnel stage</span>
+          </li>
+          <li>Multi-Gateway Payment Logic
+            <span>• Stripe + PayPal + optional add-ons wired for scale</span>
+          </li>
+        </ul>
+      </div>
+  </section>
+
+</main>
+
+
+
+<!-- START: Section Divider -->
+<hr
+  style="
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 2em 0;
+  "
+/>
+<!-- END: Section Divider -->
+ 
+
+<!-- START: Global Impact + Benefits Block -->
+<section style="width: 100%; padding: 3em 1.5em 1.5em; text-align: center;">
+  <div style="max-width: 750px; margin: 0 auto;">
+    <h2 style="font-weight: bold; font-size: 1.5em; margin-bottom: 1em; color: #fff;">
+      We’ve helped 
+      <span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent; text-decoration: underline; font-weight: bold;">
+        380+
+      </span> 
+      businesses across the globe, and have enrolled over 
+      <span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent; text-decoration: underline; font-weight: bold;">
+        60,000+
+      </span> 
+      students in our ads course.
+    </h2>
+    <ul style="list-style: none; padding: 0; margin: 2em auto 0; text-align: left; color: #fff;">
+      <li style="margin-bottom: 1em;">
+        <span style="display: inline-block; width: 1.2em; height: 1.2em; border-radius: 50%; background: linear-gradient(120deg, #ff4444, #b30000); color: #fff; text-align: center; line-height: 1.2em; font-weight: bold; font-size: 0.85em;">✔</span>
+        Our ad strategies help you resonate with your audience while delivering measurable growth.
+      </li>
+      <li style="margin-bottom: 1em;">
+        <span style="display: inline-block; width: 1.2em; height: 1.2em; border-radius: 50%; background: linear-gradient(120deg, #ff4444, #b30000); color: #fff; text-align: center; line-height: 1.2em; font-weight: bold; font-size: 0.85em;">✔</span>
+        We use data-backed creative approaches to elevate performance across platforms.
+      </li>
+      <li style="margin-bottom: 1em;">
+        <span style="display: inline-block; width: 1.2em; height: 1.2em; border-radius: 50%; background: linear-gradient(120deg, #ff4444, #b30000); color: #fff; text-align: center; line-height: 1.2em; font-weight: bold; font-size: 0.85em;">✔</span>
+        You gain automated systems that scale impact without draining resources.
+      </li>
+      <li style="margin-bottom: 1em;">
+        <span style="display: inline-block; width: 1.2em; height: 1.2em; border-radius: 50%; background: linear-gradient(120deg, #ff4444, #b30000); color: #fff; text-align: center; line-height: 1.2em; font-weight: bold; font-size: 0.85em;">✔</span>
+        Every campaign reflects regional nuance so you stand out in any market.
+      </li>
+      <li style="margin-bottom: 1em;">
+        <span style="display: inline-block; width: 1.2em; height: 1.2em; border-radius: 50%; background: linear-gradient(120deg, #ff4444, #b30000); color: #fff; text-align: center; line-height: 1.2em; font-weight: bold; font-size: 0.85em;">✔</span>
+        Our clients consistently outperform larger agencies with leaner budgets.
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- END: Global Impact + Benefits Block -->
+
+<!-- START: Niche Diversity Block -->
+<section style="width: 100%; padding: 1.5em 1.5em 3em; text-align: center;">
+  <div style="max-width: 750px; margin: 0 auto;">
+
+    <h2 style="font-weight: bold; font-size: 1.5em; color: #fff; margin-bottom: 1em;">
+      Partnered with Businesses in Over 
+      <span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent; text-decoration: underline; font-weight: bold;">
+        70+ Industries
+      </span>: From Small Shops to Fast-Growing Brands
+    </h2>
+
+    <p style="font-size: 1em; color: #fff; margin-bottom: 2em;">
+      Our ad strategies have empowered entrepreneurs across service sectors, brick-and-mortar storefronts, and ecommerce platforms to scale with clarity, creativity, and measurable impact.
+    </p>
+
+    <!-- High-Impact Services -->
+    <div style="text-align: left; margin-bottom: 2em;">
+      <h3 style="font-weight: bold; font-size: 1.25em; color: #fff; margin-bottom: 0.75em;">
+        High-Impact Services
+      </h3>
+      <div style="padding-left: 1.5em; color: #fff;">
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Business and Credit Consultants</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Online Coaches and Educators</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Financial Strategists and Advisors</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Digital Marketing Specialists</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> SEO and Funnel Experts</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Hypnotherapists and Wellness Practitioners</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Real Estate Agencies</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Insurance Companies</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Technology Companies</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> And More</p>
+      </div>
+    </div>
+
+    <!-- Brick & Mortar Businesses -->
+    <div style="text-align: left; margin-bottom: 2em;">
+      <h3 style="font-weight: bold; font-size: 1.25em; color: #fff; margin-bottom: 0.75em;">
+        Brick & Mortar Businesses
+      </h3>
+      <div style="padding-left: 1.5em; color: #fff;">
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Restaurants and Hospitality Groups</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Physical Therapy and Chiropractic Clinics</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Construction Companies and Carpenters</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Automotive Dealerships</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Local Event Services and Repair Shops</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Barber Shops and Salons</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Pet Stores</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Retail Shops</p>
+      </div>
+    </div>
+
+    <!-- Ecommerce Stores -->
+    <div style="text-align: left;">
+      <h3 style="font-weight: bold; font-size: 1.25em; color: #fff; margin-bottom: 0.75em;">
+        Ecommerce Stores
+      </h3>
+      <div style="padding-left: 1.5em; color: #fff;">
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Skincare and Wellness Brands</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Apparel and Accessories Stores</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Gourmet and Nutrition-Based Products</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Investing and Cryptocurrency Platforms</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> Affiliate Shops and Niche Market Retailers</p>
+        <p><span style="background: linear-gradient(120deg, #ff4444, #b30000); -webkit-background-clip: text; color: transparent;">✔</span> 1-Product Stores</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- END: Niche Diversity Block -->
+
+
+   <!-- Start Footer CTA Section -->
+  <section id="footer-cta" class="section-black center">
+    <h2>Ready to Transform Your Business?</h2>
+    <a href="#tiers" class="btn-red">Launch Now for $99</a>
+  </section>
+  <!-- End Footer CTA Section -->
+
+<!-- START: FAQ Section -->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <details>
+      <summary>What’s included in the Done-With-You Launch Package?</summary>
+      <p>
+        You choose the funnel template—we wire it for conversion. Includes:<br>
+        • 72-hour launch turnaround<br>
+        • Booking, payment & CRM automations<br>
+        • Calendar + funnel dashboard<br>
+        • Stripe or PayPal checkout<br>
+        • Self-managed product library<br>
+        • 24/7 AI Sales Assistant<br>
+        • Abandoned-cart recovery + upsells<br>
+        • Auto-booking for services<br>
+        $249 setup | $99/mo. No revisions. Just results.
+      </p>
+    </details>
+
+    <details>
+      <summary>What’s different in the Done-For-You Package?</summary>
+      <p>
+        We handle everything—design, copy, setup, and optimization:<br>
+        • Custom funnel design + branding<br>
+        • Product uploads + image setup<br>
+        • Monthly campaign deployment<br>
+        • Advanced AI Sales Assistant with smart routing<br>
+        • Loyalty triggers + reactivation flows<br>
+        • Auto-booking + nurture sequences<br>
+        • Subscription, trial & one-off payment logic<br>
+        $999 setup | $99/mo. Built for scale.
+      </p>
+    </details>
+
+    <details>
+      <summary>What do I get with the Performance Partner Package?</summary>
+      <p>
+        Full-stack optimization and strategic pivots:<br>
+        • Weekly audits + A/B testing<br>
+        • Quarterly funnel rebuilds<br>
+        • Custom campaigns from our vault<br>
+        • Enterprise-grade AI Sales System<br>
+        • Multi-channel routing + fulfillment triggers<br>
+        • Inventory syncing + upsell testing<br>
+        • Personalized booking flows<br>
+        • Stripe + PayPal + add-on gateways<br>
+        $4,999 setup | $199/mo. Built for aggressive growth.
+      </p>
+    </details>
+
+    <details>
+      <summary>Do I need tech experience to launch?</summary>
+      <p>
+        Nope. Every package is built for founders who want clarity, speed, and autonomy. We handle the wiring—you stay focused on growth.
+      </p>
+    </details>
+
+    <details>
+      <summary>How fast can I go live?</summary>
+      <p>
+        Done-With-You funnels launch in 72 hours. Done-For-You and Performance Partner timelines vary based on intake and asset readiness, but most clients go live within 7–14 days.
+      </p>
+    </details>
+
+    <details>
+      <summary>What kind of support do I get?</summary>
+      <p>
+        All tiers include 24/7 AI-powered support across chat, email, SMS, and social. Performance Partner clients also get direct access to our strategy team for audits and pivots.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is there a refund policy?</summary>
+      <p>
+        No refunds. Every deliverable is built for performance. We expect full commitment and provide optimization support to ensure results.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  .faq-section {
+    background: #111;
+    color: #fff;
+    padding: 3em 1.5em;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #FFD700;
+  }
+
+  .faq-container details {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    padding: 1em;
+    cursor: pointer;
+  }
+
+  .faq-container summary {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #00f8ff;
+  }
+
+  .faq-container p {
+    margin-top: 0.8em;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  @media (max-width: 600px) {
+    .faq-title {
+      font-size: 1.5em;
+    }
+    .faq-container summary {
+      font-size: 1em;
+    }
+    .faq-container p {
+      font-size: 0.9em;
+    }
+  }
+</style>
+<!-- END: FAQ Section -->
+
+
+  <!-- START: Layout Balance Wrapper -->
+<div style="max-width:1200px; margin:0 auto; padding:0 20px; box-sizing:border-box;">
+  <!-- Paste your entire section code here -->
+</div>
+<!-- END: Layout Balance Wrapper -->
+
+  
+
+
+<!-- No Page Widening -->
+<style>
+  /* prevent any element from pushing page wider */
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; overflow-x: hidden; }
+</style>  <!-- <-- close this No Page widening section tag -->
+
+  
+
+
+
+
+
+
+
+
+
+<!-- START: Footer -->
+<footer style="background: #000; color: #bbb; padding: 2em 1em; text-align: center; font-size: 0.85em;">
+  <p>© 2025 BizBuild. All rights reserved.</p>
+  <p>
+    <a href="#faq" style="color: #00bfff; text-decoration: underline; margin-right: 1em;">FAQs</a>
+    <a href="#privacy-policy" style="color: #00bfff; text-decoration: underline;">Privacy Policy</a>
+  </p>
+  <p>Need help? Contact us at <a href="mailto:support@bizbuild.tech" style="color: #FFD700;">support@bizbuild.tech</a></p>
+</footer>
+<!-- END: Footer -->
