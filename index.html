@@ -754,7 +754,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
 <!-- START: Concierge Bot -->
 <style>
-  /* Core container styling */
+  /* Container */
   #concierge-bot {
     background: #ffffff;
     text-align: center;
@@ -762,55 +762,26 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     overflow: hidden;
   }
 
-  /* Headline wrapper: allow wrapping, word-break, no overflow */
+  /* Static headline */
   #concierge-bot h2 {
+    font-weight: 900;
+    font-size: 1.8em;
+    color: #b30000;
     margin: 0 auto 0.5em;
     max-width: 100%;
     word-break: break-word;
     line-height: 1.2;
   }
-  /* Remove previous typewriter setup */
-  #concierge-bot h2 .heading-text {
-    display: inline-block;
-    background: linear-gradient(270deg, #b30000, #ff6666, #b30000);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShift 5s ease infinite;
-  }
-  /* Split headline into words and animate each */
-  #concierge-bot h2 .heading-text .word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease-out forwards;
-  }
-  #concierge-bot h2 .heading-text .word:nth-child(1) { animation-delay: 0.2s; }
-  #concierge-bot h2 .heading-text .word:nth-child(2) { animation-delay: 0.4s; }
-  #concierge-bot h2 .heading-text .word:nth-child(3) { animation-delay: 0.6s; }
-  #concierge-bot h2 .heading-text .word:nth-child(4) { animation-delay: 0.8s; }
-  #concierge-bot h2 .heading-text .word:nth-child(5) { animation-delay: 1.0s; }
 
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Subhead styling: black, wraps normally */
+  /* Subhead styling */
   #concierge-bot h2 .subhead {
     display: block;
-    font-size: .9em;
+    font-size: 0.9em;
     font-weight: 500;
-    color: #000;
-    opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards 1.2s;
+    color: #000000;
+    margin-top: 0.2em;
     word-break: break-word;
   }
-  @keyframes fadeIn { to { opacity: 1; } }
 
   /* Bot image slide-in */
   .bot-image img {
@@ -827,7 +798,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     opacity: 1;
   }
 
-  /* Bullets: centered block, black text, red diamond icons */
+  /* Bullets block */
   .bot-features-wrapper {
     display: flex;
     justify-content: center;
@@ -840,7 +811,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     max-width: 600px;
     width: 100%;
     text-align: left;
-    color: #000;
+    color: #000000;
     font-size: 1em;
     line-height: 1.5;
     word-break: break-word;
@@ -854,30 +825,30 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     flex: none;
     width: 1em;
     height: 1em;
-    margin-right: .5em;
-    margin-top: .2em;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
     background: #b30000;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
 
-  /* Responsive */
+  /* Responsive text sizing */
   @media (max-width: 480px) {
-    #concierge-bot h2 .heading-text { font-size: 1.6em; }
-    .bot-features { font-size: .95em; }
+    #concierge-bot h2 {
+      font-size: 1.6em;
+    }
+    .bot-features {
+      font-size: 0.95em;
+    }
   }
 </style>
 
 <section id="concierge-bot">
   <div style="max-width:750px; margin:0 auto;">
     <h2>
-      <span class="heading-text">
-        <span class="word">Your</span>
-        <span class="word">Own</span>
-        <span class="word">Custom-Branded</span>
-        <span class="word">Concierge</span>
-        <span class="word">Bot!</span>
+      Your Own Custom-Branded Concierge Bot!
+      <span class="subhead">
+        Answers customer questions 24/7—while you sleep.
       </span>
-      <span class="subhead">Answers customer questions 24/7—while you sleep.</span>
     </h2>
 
     <div class="bot-image">
@@ -888,19 +859,32 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
     <div class="bot-features-wrapper">
       <ul class="bot-features">
-        <li><div class="icon"></div>Fully customizable with your company name, colors, and tone of voice.</li>
-        <li><div class="icon"></div>Trained at deployment on your product & service data for precision answers.</li>
-        <li><div class="icon"></div>Retrain instantly whenever you launch new products, promos, or seasonal updates.</li>
-        <li><div class="icon"></div>Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.</li>
+        <li>
+          <div class="icon"></div>
+          Fully customizable with your company name
+        </li>
+        <li>
+          <div class="icon"></div>
+          Trained at deployment on your product & service data for precision answers.
+        </li>
+        <li>
+          <div class="icon"></div>
+          Retrain instantly whenever you launch new products, promos, or seasonal updates.
+        </li>
+        <li>
+          <div class="icon"></div>
+          Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.
+        </li>
       </ul>
     </div>
   </div>
 </section>
 
 <script>
-  // Animate image and trigger subhead fade
+  // slide the image in on load
   window.addEventListener('load', function() {
-    document.querySelector('.bot-image img').classList.add('slide-in');
+    document.querySelector('.bot-image img')
+            .classList.add('slide-in');
   });
 </script>
 <!-- END: Concierge Bot -->
