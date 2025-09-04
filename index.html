@@ -803,67 +803,137 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
 
 
-
 <!-- START: Concierge Bot Promo Block -->
-<section id="concierge-bot" style="width: 100%; background: #fff; padding: 2em 1em; text-align: center; position: relative; overflow: hidden;">
-  <div style="max-width: 750px; margin: 0 auto;">
-    <h2 style="font-weight: 900; font-size: 1.8em; margin-bottom: 1em; color: #b30000;">
+<style>
+  /* Container */
+  #concierge-bot {
+    background: #fff;
+    padding: 2em 1em;
+    text-align: center;
+  }
+
+  /* Headline */
+  #concierge-bot h2 {
+    font-weight: 900;
+    font-size: 1.8em;
+    margin-bottom: 0.8em;
+    color: #b30000;
+  }
+  #concierge-bot h2 span {
+    display: block;
+    margin-top: 0.2em;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  /* Bot image: start off-screen */
+  .bot-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.8s ease-out;
+  }
+  /* On .slide-in, image animates in */
+  .bot-image img.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Bullet list wrapper: center the block */
+  .bot-features-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+  }
+
+  /* Bullets: column, left-aligned items */
+  .bot-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #444;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  /* Each li: diamond + text */
+  .bot-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+  }
+  .bot-features li .icon {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    background: #b30000;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  /* Responsive text sizing */
+  @media (max-width: 480px) {
+    #concierge-bot h2 { font-size: 1.6em; }
+    .bot-features { font-size: 0.95em; }
+  }
+</style>
+
+<section id="concierge-bot">
+  <div style="max-width: 750px; margin: auto;">
+    <h2>
       Your Own Custom-Branded Concierge Bot!
-      <br><span style="font-size: 0.9em; font-weight: 500; color: #333;">Answers customer questions 24/7—while you sleep.</span>
+      <span>Answers customer questions 24/7—while you sleep.</span>
     </h2>
 
-    <div id="bot-image" style="opacity: 0; transform: translateX(100%); transition: all 0.8s ease-out;">
-      <img src="https://i.postimg.cc/jd2vLj5F/gemini-2-5-flash-image-preview-nano-banana-remove-the-words-Aur-1.png" alt="Concierge Bot" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    <div class="bot-image">
+      <img
+        src="https://i.postimg.cc/jd2vLj5F/gemini-2-5-flash-image-preview-nano-banana-remove-the-words-Aur-1.png"
+        alt="Custom-Branded Concierge Bot">
     </div>
 
-    <ul style="list-style: none; padding: 0; margin: 2em auto 0; text-align: center; color: #444; font-size: 1em; line-height: 1.6;">
-      <li style="margin-bottom: 1em;">
-        <div style="display: inline-flex; align-items: center; justify-content: center;">
-          <span style="width: 1em; height: 1em; background: #b30000; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); margin-right: 0.5em;"></span>
-          <span>Fully customizable with your company name, and colors.</span>
-        </div>
-      </li>
-      <li style="margin-bottom: 1em;">
-        <div style="display: inline-flex; align-items: center; justify-content: center;">
-          <span style="width: 1em; height: 1em; background: #b30000; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); margin-right: 0.5em;"></span>
-          <span>Trained at deployment using your product and service data for precision answers.</span>
-        </div>
-      </li>
-      <li style="margin-bottom: 1em;">
-        <div style="display: inline-flex; align-items: center; justify-content: center;">
-          <span style="width: 1em; height: 1em; background: #b30000; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); margin-right: 0.5em;"></span>
-          <span>Retrain anytime to reflect new products, promos, or seasonal updates.</span>
-        </div>
-      </li>
-      <li style="margin-bottom: 1em;">
-        <div style="display: inline-flex; align-items: center; justify-content: center;">
-          <span style="width: 1em; height: 1em; background: #b30000; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); margin-right: 0.5em;"></span>
-          <span>Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.</span>
-        </div>
-      </li>
-    </ul>
+    <div class="bot-features-wrapper">
+      <ul class="bot-features">
+        <li>
+          <div class="icon"></div>
+          Fully customizable with your company name, colors, and tone of voice.
+        </li>
+        <li>
+          <div class="icon"></div>
+          Trained at deployment on your product & service data for precision answers.
+        </li>
+        <li>
+          <div class="icon"></div>
+          Retrain instantly whenever you launch new products, promos, or seasonal updates.
+        </li>
+        <li>
+          <div class="icon"></div>
+          Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <!-- Scroll-triggered animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const botImage = document.getElementById("bot-image");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              botImage.style.opacity = "1";
-              botImage.style.transform = "translateX(0)";
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      observer.observe(botImage);
-    });
-  </script>
 </section>
+
+<script>
+  // Trigger the slide-in on every device after images & CSS load
+  window.addEventListener('load', function() {
+    document.querySelector('.bot-image img')
+            .classList.add('slide-in');
+  });
+</script>
 <!-- END: Concierge Bot Promo Block -->
+
+
 
 
 
