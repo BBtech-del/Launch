@@ -752,6 +752,161 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
 
 
+<!-- START: Concierge Bot -->
+<style>
+  /* Prevent overflow and set box-sizing */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+  /* Container */
+  #concierge-bot {
+    background: #ffffff;
+    text-align: center;
+    padding: 2em 1em;
+    overflow: hidden;
+  }
+
+  /* Headline wrapper */
+  #concierge-bot h2 {
+    margin: 0 auto 0.5em;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  #concierge-bot h2 .heading-text,
+  #concierge-bot h2 .subhead {
+    display: block;
+  }
+
+  /* Slide-down + typewriter + gradient wave */
+  #concierge-bot h2 .heading-text {
+    font-weight: 900;
+    font-size: 1.8em;
+    margin-bottom: .2em;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid #b30000;
+    width: 0;
+    opacity: 0;
+    background: linear-gradient(270deg, #b30000, #ff6666, #b30000);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:
+      slideDown     0.6s ease-out    forwards 0.2s,
+      typing        1.5s steps(40,end) forwards 0.6s,
+      blinkCaret    .75s step-end     infinite 2.1s,
+      gradientShift 5s ease          infinite 0s;
+  }
+
+  /* Subhead */
+  #concierge-bot h2 .subhead {
+    font-size: .9em;
+    font-weight: 500;
+    color: #000;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards 2.2s;
+    word-break: break-word;
+  }
+
+  /* Keyframes */
+  @keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @keyframes typing    { from { width: 0; } to { width: 100%; } }
+  @keyframes blinkCaret{ 50%  { border-color: transparent; } }
+  @keyframes fadeIn    { to { opacity: 1; } }
+  @keyframes gradientShift {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+  }
+
+  /* Bot image slide-in */
+  .bot-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+  .bot-image img.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Bullet list centered & wrapped */
+  .bot-features-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+  }
+  .bot-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    color: #000;
+    font-size: 1em;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .bot-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+  }
+  .bot-features li .icon {
+    width: 1em;
+    height: 1em;
+    flex: none;
+    margin-right: .5em;
+    margin-top: .2em;
+    background: #b30000;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    #concierge-bot h2 .heading-text { font-size: 1.6em; }
+    .bot-features { font-size: .95em; }
+  }
+</style>
+
+<section id="concierge-bot">
+  <div style="max-width:750px; margin:0 auto;">
+    <h2>
+      <span class="heading-text">Your Own Custom-Branded Concierge Bot!</span>
+      <span class="subhead">Answers customer questions 24/7—while you sleep.</span>
+    </h2>
+
+    <div class="bot-image">
+      <img src="https://i.postimg.cc/jd2vLj5F/gemini-2-5-flash-image-preview-nano-banana-remove-the-words-Aur-1.png"
+           alt="Custom-Branded Concierge Bot">
+    </div>
+
+    <div class="bot-features-wrapper">
+      <ul class="bot-features">
+        <li><div class="icon"></div>Fully customizable with your company name, colors, and tone of voice.</li>
+        <li><div class="icon"></div>Trained at deployment on your product & service data for precision answers.</li>
+        <li><div class="icon"></div>Retrain instantly whenever you launch new products, promos, or seasonal updates.</li>
+        <li><div class="icon"></div>Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  // on load, animate the image
+  window.addEventListener('load', function() {
+    document.querySelector('.bot-image img').classList.add('slide-in');
+  });
+</script>
+<!-- END: Concierge Bot -->
+
+
+
 
 <!-- SECTION: Automated Follow-Up Use Cases -->
 <section id="automated-follow-up" style="background-color:#fff; color:#000; padding:60px 40px; font-family:'Segoe UI', sans-serif; display:flex; flex-direction:column; gap:60px;">
@@ -800,104 +955,6 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
 </section>
 <!-- END SECTION: Automated Follow-Up Use Cases -->
-
-
-
-<!-- START: Concierge Bot Promo Block -->
-<style>
-  /* 1) Wrap your main headline text in a span.heading-text for animation */
-  #concierge-bot h2 {
-    padding-bottom: 0.5em;
-  }
-  #concierge-bot h2 .heading-text,
-  #concierge-bot h2 span.subhead {
-    display: block;
-  }
-
-  /* 2) Slide-in + Typewriter + Color-wave on .heading-text */
-  #concierge-bot h2 .heading-text {
-    font-weight: 900;
-    font-size: 1.8em;
-    margin-bottom: 0.2em;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid #b30000;
-    width: 0;
-    opacity: 0;
-    background: linear-gradient(270deg, #b30000, #ff6666, #b30000);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation:
-      slideDown    0.6s ease-out    forwards 0.2s,
-      typing       1.5s steps(40,end) forwards 0.6s,
-      blinkCaret   .75s step-end     infinite 2.1s,
-      gradientShift 5s ease         infinite 0s;
-  }
-
-  /* 3) Subhead stays hidden until the typewriter finishes */
-  #concierge-bot h2 span.subhead {
-    font-size: .9em;
-    font-weight: 500;
-    color: #333;
-    opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards 2.2s;
-  }
-
-  /* KEYFRAMES */
-  @keyframes slideDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to   { transform: translateY(   0); opacity: 1; }
-  }
-  @keyframes typing {
-    from { width: 0; }
-    to   { width: 100%; }
-  }
-  @keyframes blinkCaret {
-    50% { border-color: transparent; }
-  }
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-  @keyframes gradientShift {
-    0%   { background-position:   0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position:   0% 50%; }
-  }
-
-  /* Responsive tweak */
-  @media (max-width: 480px) {
-    #concierge-bot h2 .heading-text { font-size: 1.6em; }
-  }
-</style>
-
-<section id="concierge-bot">
-  <div style="max-width: 750px; margin: auto; text-align: center; padding:2em 1em;">
-    <h2>
-      <span class="heading-text">Your Own Custom-Branded Concierge Bot!</span>
-      <span class="subhead">Answers customer questions 24/7—while you sleep.</span>
-    </h2>
-
-    <!-- bot-image + bullets remain unchanged -->
-    <div class="bot-image">
-      <img src="https://i.postimg.cc/jd2vLj5F/gemini-2-5-flash-image-preview-nano-banana-remove-the-words-Aur-1.png"
-           alt="Custom-Branded Concierge Bot">
-    </div>
-
-    <div class="bot-features-wrapper">
-      <ul class="bot-features">
-        <li><div class="icon"></div>Fully customizable with your company name.</li>
-        <li><div class="icon"></div>Trained at deployment on your product & service data for precision answers.</li>
-        <li><div class="icon"></div>Retrain instantly whenever you launch new products, promos, or seasonal updates.</li>
-        <li><div class="icon"></div>Handles FAQs, guides prospects, and converts leads—your 24/7 brand ambassador.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-<!-- END: Concierge Bot Promo Block -->
-
-
-
 
 
 
